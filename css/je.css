@@ -1,0 +1,381 @@
+@charset "UTF-8";
+#main_slide_je {
+  padding-top: 65px !important;
+}
+#main_slide_je #je_Mainswiper {
+  background-color: #F7F8FA;
+  height: 700px;
+}
+#main_slide_je #je_Mainswiper .mainbannerLeft {
+  padding: 160px 48px 84px 85px;
+}
+#main_slide_je #je_Mainswiper .mainbanner_Video, #main_slide_je #je_Mainswiper .main_back, #main_slide_je #je_Mainswiper .maincollabo {
+  position: relative;
+  border-radius: 350px 0 0 0;
+  border: none;
+  right: 0;
+  bottom: 0;
+  float: none;
+}
+#main_slide_je #je_Mainswiper .main_back {
+  background-image: url("//hyunjiq.github.io//petopia/img/img_je/main_littledog.jpg");
+  border-radius: 350px 0 0 0;
+  border: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  width: 1242px;
+  height: 700px;
+  box-sizing: border-box;
+}
+#main_slide_je #je_Mainswiper .mainbannerText_en {
+  font-family: Quicksand;
+  line-height: 70px;
+  color: #3D71FF;
+  font-weight: bold;
+  font-size: 65px;
+}
+#main_slide_je #je_Mainswiper .mainbannerText_kr {
+  font-family: NotoSansKR;
+  line-height: 23px;
+  color: #3D71FF;
+  font-size: 20px;
+}
+#main_slide_je #je_Mainswiper .mainbannerText {
+  white-space: nowrap;
+  font-family: NotoSansKR;
+  line-height: 51px;
+  font-weight: bold;
+  color: #3D71FF;
+  font-size: 2.8rem;
+}
+#main_slide_je #je_Mainswiper .mainActing, #main_slide_je #je_Mainswiper .mainvideo {
+  text-decoration: none;
+  color: white;
+  background-color: #6A92FE;
+  border-radius: 30px;
+  padding: 1rem;
+  width: 212px;
+  height: 58px;
+}
+#main_slide_je #je_Mainswiper .mainvideo {
+  padding: 1rem;
+}
+#main_slide_je #je_Mainswiper .mainbanner_text {
+  font-family: NotoSansKR;
+  font-size: 16px;
+  line-height: 19px;
+  color: #666666;
+}
+
+#social_program .sp_je {
+  width: 700px;
+}
+#social_program #jeSwiper {
+  border-radius: 12px;
+  margin-right: 20px;
+  height: 346px;
+  margin-bottom: 180px;
+}
+#social_program .sp_text {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  color: white;
+  font-size: 30px;
+}
+#social_program .slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 700px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 검정색에 투명도 조절 */
+}
+#social_program .swiper-button-next,
+#social_program .swiper-button-prev {
+  position: absolute;
+  color: white;
+  margin-top: 120px;
+}
+#social_program .swiper-button-prev {
+  left: 590px;
+}
+#social_program .swiper-button-next::after,
+#social_program .swiper-button-prev::after {
+  font-size: 2rem;
+}
+
+.box {
+  border-radius: 12px;
+  background-color: #b5c9ff;
+  padding: 8px 0;
+  margin-bottom: 13px;
+}
+
+.spNews {
+  list-style: none;
+}
+
+.libox {
+  height: 60px;
+  margin-bottom: 13px;
+  background-color: #f7f8fa;
+  border-radius: 12px;
+  padding-right: 10px;
+}
+
+.libox .sp-text {
+  font-size: 10px;
+}
+
+.libox .sp-style:hover {
+  text-decoration: underline;
+}
+
+#form_tag {
+  height: 868px;
+  background-color: #D3DFFF;
+}
+#form_tag .form_img {
+  position: relative;
+  border-radius: 30px;
+  border: none;
+  width: 100%;
+}
+#form_tag .form_text {
+  text-align: center;
+}
+
+#app_download {
+  position: relative;
+  background-color: #6A92FE;
+  padding: 3.7rem 0;
+  background-image: url(//hyunjiq.github.io/petopia/img/img_je/bn_animal.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#app_download #jeAppbanner .app_come {
+  font-weight: bold;
+  font-size: 38px;
+}
+#app_download #jeAppbanner .app_come_first {
+  font-size: 28px;
+}
+#app_download #jeAppbanner .app_down {
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  width: 300px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+#app_download:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 300px;
+  top: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(//hyunjiq.github.io/petopia/img/img_je/bn_cloud1.svg);
+}
+#app_download:after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  top: 0;
+  bottom: 0px;
+  background-size: 400px 300px;
+  background-repeat: no-repeat;
+  background-image: url(//hyunjiq.github.io/petopia/img/img_je/bn_cloud1.svg);
+  transform: scaleX(-1);
+}
+
+.je_main1 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 100px;
+  height: 50px;
+  top: 60%;
+  left: 5%;
+}
+.je_main1 p {
+  color: #92ff5d;
+  bottom: 70%;
+  font-size: 1.5rem;
+  width: 500px;
+}
+
+.je_main2 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 1242px;
+  height: 700px;
+  top: 7%;
+  right: 0;
+}
+.je_main2 p {
+  color: #92ff5d;
+  bottom: -7%;
+  font-size: 1.5rem;
+  width: 500px;
+}
+
+.je_app {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 220px;
+  height: 50px;
+  top: 40%;
+  right: 18%;
+}
+.je_app p {
+  color: #92ff5d;
+  bottom: 70%;
+  font-size: 1.5rem;
+}
+
+.je_form1 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 550px;
+  height: 500px;
+  top: 21%;
+  left: 5%;
+}
+.je_form1 p {
+  color: #92ff5d;
+  bottom: 97%;
+  font-size: 1.5rem;
+}
+
+.je_form2 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 550px;
+  height: 50px;
+  top: 48%;
+  right: 6%;
+  font-size: 1.5rem;
+}
+.je_form2 p {
+  color: #92ff5d;
+  bottom: -30%;
+  right: -50%;
+  font-size: 1.5rem;
+}
+
+.je_form3 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 220px;
+  height: 50px;
+  top: 75%;
+  right: 19%;
+}
+.je_form3 p {
+  color: #92ff5d;
+  top: 100%;
+  font-size: 1.5rem;
+}
+
+.je_form4 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 220px;
+  height: 30px;
+  bottom: -1%;
+  left: 2%;
+}
+.je_form4 p {
+  color: #92ff5d;
+  top: 100%;
+  width: 350px;
+  font-size: 1.5rem;
+}
+
+.je_form5 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 550px;
+  height: 120px;
+  top: 30%;
+  right: 6%;
+}
+.je_form5 p {
+  color: #92ff5d;
+  top: -71%;
+  width: 460px;
+  font-size: 1.5rem;
+}
+
+.je_form6 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 550px;
+  height: 50px;
+  top: 57%;
+  right: 6%;
+}
+.je_form6 p {
+  color: #92ff5d;
+  width: 200px;
+  bottom: -30%;
+  right: -38%;
+  font-size: 1.5rem;
+}
+
+.je_form7 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 550px;
+  height: 50px;
+  top: 66%;
+  right: 6%;
+}
+.je_form7 p {
+  color: #92ff5d;
+  width: 200px;
+  bottom: -110%;
+  right: -38%;
+  font-size: 1.5rem;
+}
+
+.je_social1 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 100px;
+  height: 40px;
+  bottom: 33%;
+  left: 44%;
+}
+.je_social1 p {
+  color: #92ff5d;
+  top: 100%;
+  width: 350px;
+  font-size: 1.5rem;
+}
+
+.je_social2 {
+  z-index: 10001;
+  border: 5px solid #92ff5d;
+  width: 300px;
+  height: 300px;
+  top: 17%;
+  right: 13%;
+}
+.je_social2 p {
+  color: #92ff5d;
+  top: -12%;
+  left: -20%;
+  width: 500px;
+  font-size: 1.5rem;
+}

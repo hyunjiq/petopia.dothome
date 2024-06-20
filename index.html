@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="펫시터, 방문 돌봄, 방문 산책, 방문 탁묘, 도그워커, 강아지 펫시터, 고양이 펫시터, 애견 호텔, 강아지 호텔, 고양이 호텔" class="next-head">
+    <!-- seo -->
+    <meta name="description" content="앱으로 언제든지 펫시터를 예약해보세요. 펫시터의 LIVE 중계와 전문적인 산책, 사료 급여, 배변 정리 케어로 안심할 수 있어요." class="next-head">
+    <meta property="og:type" content="website" class="next-head">
+    <meta property="og:site_name" content="와요" class="next-head">
+    <meta property="og:url" content="//wayopet.com/" class="next-head">
+    <meta property="og:title" content="펫시터 방문 돌봄 및 산책 서비스 | 와요 (WAYO)" class="next-head">
+    <meta property="og:description" content="앱으로 언제든지 펫시터를 예약해보세요. 펫시터의 LIVE 중계와 전문적인 산책, 사료 급여, 배변 정리 케어로 안심할 수 있어요." class="next-head">
+    <meta property="og:image" content="/img/seo-img.jpg" class="next-head">
+    <meta property="og:image:width" content="1200" class="next-head">
+    <meta property="og:image:height" content="630" class="next-head">
+    <meta property="og:see_also" content="//blog.naver.com/wayopet" class="next-head">
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" /> 
+    <link rel="apple-touch-icon" href="/img/desktop_app_wayo.png" /> 
+    <link rel="apple-touch-icon-precomposed" href="/img/desktop_app_wayo.png"> 
+    <!-- <meta name="msapplication-TileImage" content="//hantitntn.com/seo/favicon.png" size="270x270" /> -->
+    <!-- 텍스트 폰트 -->
+    <link rel="preconnect" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/font.css">
+    <!-- 폰트 아이콘 -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- 초기화 -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+    <!-- 그리드시스템-->
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- 플러그인 -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ 
+    <link href="//unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="//unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 커스터마이징 -->
+    <link rel="stylesheet" href="/css/common.min.css">
+    <link rel="stylesheet" href="/css/sh.min.css">
+    <link rel="stylesheet" href="/css/je.min.css">
+    <link rel="stylesheet" href="/css/hj.min.css">
+    <title>WAYO</title>
+    
+
+    <!-- 아래 달력까지 4개 폼태그용 -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- 달력 -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.min.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- 헤더 상단 내비게이션  -->
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url :"./json/hd.json",
+                type : "GET",
+                dataType : "json",
+                success : function(data){
+
+                    let navi = "";
+
+                    data.forEach((ele,i) => {
+
+                        navi += `<li class="${ele["cls"]["li"]}"><a class="${ele["cls"]["a"]}" href="${ele["href"]}">${ele["text"]}</a>`
+                        navi += `<ul class="${ele["cls"]["ul"]}">`
+
+                            ele["d2_li"].forEach(function(el,id){
+                                navi += `<li class="${el["cls"]["li"]}"><a href="${el["href"]}">${el["text"]}</a>`
+                            });
+                        
+                        navi += `</ul>`;
+                        navi += `</li>`;
+
+                    });
+ 
+                    $("#hd .d1").html(navi);
+                },
+            
+                error : ""
+            })
+
+        })
+    </script>
+</head>
+</head>
+<body>
+    <!-- header#hd>h1>a>img^^ul>li*6>a+ul>li>a^^^^ul>li>form+a*2^li -->
+    <header id="hd" class="d-flex justify-content-between position-fixed align-items-center px-5">
+        <h1 class="mb-0"><a id="hd_h1" class="d-block" href="#"><img class="logo_img d-block" src="./img/logo-04.svg" alt="와요로고"></a></h1>
+        <ul class="d1 d-flex gnb mb-0 p-0 ">
+            <!-- <li class="d1_li position-relative">
+                <a class="d1_a" id="info_click" href="#">펫시터가 와요</a>
+                <ul class="d2 position-absolute ps-0">
+                    <li class="d2_li"><a href="">방문 돌봄</a></li>
+                    <li class="d2_li"><a href="">집중 호스피스</a></li>
+                    <li class="d2_li"><a href="">펫 플래닛</a></li>
+                    <li class="d2_li"><a href="">웨딩케어</a></li>
+                    <li class="d2_li"><a href="">안심 픽업&드랍</a></li>
+                </ul>
+            </li>
+            <li class="d1_li position-relative">
+                <a class="d1_a" href="#">훈련사</a>
+                <ul class="d2 position-absolute ps-0">
+                    <li class="d2_li"><a href="">훈련사 소개</a></li>
+                    <li class="d2_li"><a href="">훈련사에게 물어봐</a></li>
+                </ul>
+            </li>
+            <li class="d1_li position-relative">
+                <a class="d1_a" href="#">플레이스</a>
+                <ul class="d2 position-absolute ps-0">
+                    <li class="d2_li"><a href="">입점 문의</a></li>
+                    <li class="d2_li"><a href="">매장 찾기</a></li>
+                </ul>
+            </li>
+            <li class="d1_li position-relative">
+                <a class="d1_a" href="#">사회공헌</a>
+                <ul class="d2 position-absolute ps-0">
+                    <li class="d2_li"><a href="">봉사활동</a></li>
+                    <li class="d2_li"><a href="">지식 나눔</a></li>
+                    <li class="d2_li"><a href="">심리 상담</a></li>
+                </ul>
+            </li>
+            <li class="d1_li position-relative">
+                <a class="d1_a" href="#">커뮤니티</a>
+                <ul class="d2 position-absolute ps-0">
+                    <li class="d2_li"><a href="">실시간 후기</a></li>
+                    <li class="d2_li"><a href="">구독 서비스</a></li>
+                </ul>
+            </li>
+            <li class="d1_li position-relative">
+                <a class="d1_a" href="#">펫트너</a>
+                <ul class="d2 position-absolute ps-0">
+                    <li class="d2_li"><a href="">펫시터 지원</a></li>
+                    <li class="d2_li"><a href="">훈련사 지원</a></li>
+                    <li class="d2_li"><a href="">산책 케어 지원</a></li>
+                </ul>
+            </li> -->
+        </ul>
+        <ul class="d-flex lnb mb-0 p-0">
+            <li class="mx-2 searchIcon d-flex">
+                <form class="form-show search-form d-none border me-3 position-absolute">
+                    <a class="a-search" href="#">
+                        <i class="bi bi-search"></i>
+                        <span class="visually-hidden">검색</span>
+                    </a>
+                    <input type="text" class="form-control search-pc" placeholder="검색어 입력">
+                </form>
+                <a class="btn-a a-search" href="#">
+                    <i class="bi bi-search"></i>
+                    <span class="visually-hidden">검색</span>
+                </a>
+                <a class="a-x d-none" href="#">
+                    <i class="bi bi-x-lg"></i>
+                    <span class="visually-hidden">닫기</span>
+                </a>
+            </li>
+            <li class="mx-2 personIcon">
+                <a id="hd_log" href="#">
+                    <i class="bi bi-person"></i>
+                    <span class="visually-hidden">로그인</span>
+                </a>
+            </li>
+        </ul>
+        <script>
+            
+                const sIcon = document.querySelector(".btn-a");
+                const xIcon = document.querySelector(".a-x");
+                const fShow = document.querySelector(".form-show");
+
+                sIcon.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    sIcon.classList.add("d-none");
+                    xIcon.classList.remove("d-none");
+                    fShow.classList.remove("d-none");
+                    fShow.classList.add("d-flex");
+                });
+
+                xIcon.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    sIcon.classList.remove("d-none");
+                    xIcon.classList.add("d-none");
+                    fShow.classList.remove("d-flex");
+                    fShow.classList.add("d-none");
+                });
+        </script>        
+    </header>
+    <div id="team_info" class="position-fixed d-none">
+        <img src="/img/logo-04.svg" alt="펫토피아와요">
+        <div class="info_wrap d-flex">
+            <div class="col hj_info all_info">
+                <div class="hj_img all_img"></div>
+                <span>이현지</span>
+            </div>
+            <div class="col sh_info all_info">
+                <div class="sh_img all_img"></div>
+                <span>문세현</span>
+            </div>
+            <div class="col je_info all_info">
+                <div class="je_img all_img"></div>
+                <span>정주은</span>
+            </div>
+        </div>
+        <p class="info_p1">
+            <span class="marker">
+                <span>#펫팸족</span>
+            </span>
+            <span class="marker">
+                <span>#반려동물</span>
+            </span>
+            <span class="marker">
+                <span>#펫케어</span>
+            </span>
+            <span class="marker">
+                <span>#반려가구천만시대</span>
+            </span>
+        </p>
+        <p class="info_p2">반려동물을 키우는 가구에게 전문적이고 신뢰할 수 있는 돌봄 환경을 제공하며,<br>
+            다양한 부가 서비스를 통해 반려동물과 그 주인의 삶의 질을 향상시키고자 한다.<br>
+            반려동물과 주인의 행복한 공존을 지원하는 것이 와요 사이트의 주요 목적이다.</p>
+    </div>
+    <div id="hd_ex" class="d-none hd_quik position-fixed justify-content-between">
+        <div class="ex_con hd_ex_logo">
+            <p>svg 이미지 사용</p>
+        </div>
+        <div class="ex_con hd_ex_menu">
+            <p>마우스 hover시 색이 변경 됨<br>전체 메뉴 나옴<br><br>header#hd>h1>a>img^^ul>li*6>a+ul>li>a^^^^ul>li>form+a*2^li</p>
+        </div>
+        
+        <div class="ex_con hd_ex_icon d-flex position-relative border-0">
+            <div class="ex_con ex_con_div">
+                <p>1</p>
+                <p class="p_right">1. 검색버튼 누르면 검색 창이 뜸<br>2. 로그인 페이지로 이동</p>
+            </div>
+            <div class="ex_con">
+                <p>2</p>
+            </div>
+        </div>
+    </div>  
+    <section id="main_slide_je">
+        <div class="swiper mySwiper" id="je_Mainswiper">
+            <div class="swiper-wrapper">
+               
+                <!--메인배너 2번 영상-->
+              <div class="swiper-slide d-flex align-items-center justify-content-between">
+                    <div class="mainbannerLeft">
+                        <div class="mb-4">
+                            <h1 class="mainbannerText">모두가 행복한 공간으로,</h1>
+                            <h1 class="mainbannerText">“와요(WAYO)”!</h1>
+                        </div>
+                        <div class="mb-5">
+                            <h6 class="mainbannerText_kr">“와요(WAYO)” 공식 유튜브 리뉴얼!</h6>
+                        </div>
+                        <div><a href="javascript:void(0)" class="mainvideo">영상 더보기</a></div>
+                    </div>
+                    <div>
+                        <iframe width="1242" height="700" class="mainbanner_Video" src="https://www.youtube.com/embed/RWRm1vHZN8A?si=KUt8OAz0PFLwfhsb" title="YouTube video player" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>
+                    </div>
+              </div> 
+              <!--메인배너1번 유기견 홍보-->
+              <div class="swiper-slide d-flex align-items-center justify-content-between">
+                    <div class="mainbannerLeft"> 
+                        <div class="mb-4">
+                            <h1 class="mainbannerText_en">Would you be </h1>
+                            <h1 class="mainbannerText_en">My Family?</h1>
+                        </div>
+                        <div class="mb-5">
+                            <h6 class="mainbannerText_kr">연간 유기동물 수 약 13만 마리,</h6>
+                            <h6 class="mainbannerText_kr">버려진 생명들은 여전히 가족을 기다리고 있습니다.</h6>
+                        </div>
+                        <div><a href="javascript:void(0)" class="mainActing">유기동물 보호 활동</a></div>
+                    </div>
+                    <div class="main_back">
+                    </div>
+              </div>
+                <!-- 메인배너 3번 콜라보 -->
+              <div class="swiper-slide d-flex align-items-center justify-content-between">
+                    <div class="mainbannerLeft"> 
+                        <div class="mb-4">
+                            <img src="/img/img_je/main_collabo_txt.png" alt="콜라보로고">  
+                        </div>
+                        <div class="mb-5">
+                            <h1 class="mainbannerText mb-3">콜라보 5월 한정 이벤트</h1>
+                            <h6 class="mainbanner_text">와요 10시간 이상 이용자들에게</h6>
+                            <h6 class="mainbanner_text">15ml 스프레이 일일 선착순 100명 증정(~5/15)</h6> 
+                            <h6 class="mainbanner_text">이지세이프 클립+워킹세이프 스프레이 120ml 기간 한정 15%할인</h6>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/img/img_je/main_collabo.jpg" alt="콜라보상품" class="maincollabo">
+                    </div>
+              </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+  <!-- Initialize Swiper -->
+  <script>
+    const swiperje = new Swiper("#je_Mainswiper", {
+        // autoplay: { delay: 3000, },
+      pagination: {
+        el: "#je_Mainswiper .swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+
+        <div class="ex_off position-absolute je_main1 d-none">
+            <p class="position-absolute">클릭시 서브 페이지 이동 </p>
+        </div>
+        <div class="ex_off position-absolute je_main2 d-none">
+            <p class="position-absolute">유튜브api 연동</p>
+        </div>
+
+    </section>
+    <section id="main_service" class="margin">
+        <div class="container position-relative ">
+        <h2>주요 서비스</h2>
+            <ul class="row px-0">
+                <li class="col-lg-3 col-6 mb-3">
+                    <a href="" class="d-block ">
+                        <img src="/img/img_sh/service1.jpg" class="w-100" alt="돌봄">
+                        <span class="ms_div">방문돌봄</span>
+                    </a>
+                </li>
+                <li class="col-lg-3 col-6 mt-lg-5 mb-3">
+                    <a href="" class="d-block ">
+                        <img src="/img/img_sh/service2.jpg" class="w-100" alt="산책">
+                        <span class=" ms_div">방문산책</span>
+                    </a>
+                </li>
+                <li class="col-lg-3 col-6">
+                    <a href="" class="d-block ">
+                        <img src="/img/img_sh/service3.jpg" class="w-100" alt="훈련">
+                        <span class="ms_div">방문훈련</span>
+                    </a>
+                </li>
+                <li class="col-lg-3 col-6 mt-lg-5">
+                    <a href="" class="d-block ">
+                        <img src="/img/img_sh/service4.jpg" class="w-100" alt="더보기">
+                        <span class="ms_div">더보기</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="ex_off position-absolute ex_off_sh d-none">
+                <p class="position-absolute ms_p1 pt-2">가장 많이 사용하는 대표적인 서비스</p>
+                <p class="position-absolute ms_p2 p-2">스크롤시 메뉴들이 한꺼번에 내려오는 액티브</p>
+                <p class="position-absolute ms_p3 p-2">하단의 글씨나 이미지 클릭시 <br>서브 사이트 이동</p>
+                <p class="position-absolute ms_p4">section#main_service>div.container+h2{주요 서비스}>ul>li*4>a.d-block>img+span</p>
+            </div>
+        </div>
+    </section>
+    <section id="live_review" class="margin ">
+        <div class="container position-relative">
+            <h2>실시간 후기</h2>
+            <img src="/img/img_sh/live_review.jpg" alt="" class="">
+            <div class="position-absolute ex_off top-0 d-none">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="ex_off_sh2"> 
+                        <p class="lr_p1 pt-2">와요 사용자들의 실제 리뷰</p>
+                        <p class="lr_p2">네이버 API 연동 <br>: 지역 클릭시 그와 맞는 후기로 스와이퍼 변경</p>
+                    </div>
+                    <div class="ex_off_sh3 ms-2 d-flex justify-content-between">
+                        <p class="p-2">네이버 리뷰 API 연동 <br>스와이퍼 오토 : 실시간 후기 재생</p>
+                        <p class="pt-4 lr_p3">지역별 후기 확인</p>
+                        <p></p>
+                        <div class="ex_off_sh4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="with_place" class="margin">
+        <div class="container px-0 position-relative">
+            <img src="/img/hj_img/sectionPlace.jpg" alt="" class="sectionPlace">
+            <div id="place_ex" class="ex_off container px-0 position-absolute d-none">
+                <div class="d-flex justify-content-between">
+                    <div class="ex_con ex_con_p1 position-absolute">
+                        <p>1 번째 스와이퍼</p>
+                    </div>
+                    <div class="ex_con ex_con_p2 position-absolute">
+                        <p>1 번째 스와이퍼 <br>페이지네이션 스타일 수정 </p>
+                    </div>
+                    <div class="ex_con ex_con_p3 position-absolute">
+                        <p>2 번째 스와이퍼 <br> 슬라이드를 누르면 border가 생기고 각 장소의 이미지가 보여짐</p>
+                    </div>
+                </div>                  
+            </div>
+        </div>        
+    </section>
+    <section id="social_program" class="margin">
+        <div class="container position-relative">
+            <h2>사회 공헌 프로그램</h2>
+            <div class="row">
+                <div class="col d-flex p-0 sp_je">
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper" id="jeSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slide-overlay"></div>
+                                <div class="sp_text">유기견 봉사활동</div>
+                                <img src="/img/img_je/sp_volunteer.jpg" alt="유기견봉사활동">
+
+                            </div>
+
+                            <div class="swiper-slide"> 
+                                <div class="slide-overlay"></div>
+                                <div class="sp_text">배우 김효진x와요 특별한 인터뷰</div>
+                                <img src="/img/img_je/sp_interview.jpg" alt="특별인터뷰">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="slide-overlay"></div>
+                                <div class="sp_text">유기동물 보호소 산책봉사</div>
+                                <img src="/img/img_je/sp_walkingvolunteer.jpg" alt="보호소 산책봉사">
+                            </div>
+
+                        </div>
+                        <!-- 스와이퍼 이동버튼 -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        
+                    </div>
+
+                </div>
+                <!-- 프로그램 일정 -->
+                <div class="col ps-0 sp_je" >
+                    <div class="d-flex justify-content-between align-items-center px-3 pe-3 box">
+                        <h5 class="pt-1">프로그램 일정</h5>
+                        <span class="pt-1"><a href="javascript:void(0)"><h6>더보기</h6></a></span>
+                    </div>
+                   
+                        <ul class="spNews px-0 pb-0">
+                            <li><a href="javascript:void(0)" class="libox ps-4 d-flex justify-content-between align-items-center">
+                                <span class="sp-text">2024.03.12</span>
+                                <span class="me-5 sp-style">국제 강아지의 날 봉사활동자 모집</span>
+                                <span class="px-2"></span></a>
+                            </li>
+
+                            <li><a href="javascript:void(0)" class="libox ps-4 d-flex justify-content-between align-items-center">
+                                <span class="sp-text">2024.04.06</span>
+                                <span class="me-5 sp-style">서울시 유기견 보호소 봉사활동</span>
+                                <span class="px-2"></span></a>
+                            </li>
+
+                            <li><a href="javascript:void(0)" class="libox ps-4 d-flex justify-content-between align-items-center">
+                                <span class="sp-text">2024.04.28</span>
+                                <span class="me-5 sp-style">반려동물 인식 교육 프로그램 안내</span>
+                                <span class="px-2"></span></a>
+                            </li>
+
+                            <li><a href="javascript:void(0)" class="libox ps-4 d-flex justify-content-between align-items-center">
+                                <span class="sp-text">2024.04.04</span>
+                                <span class="me-5 sp-style">동물 용품 기부에 관한 공지사항</span>
+                                <span class="px-2"></span></a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+
+            <div class="ex_off position-absolute je_social1 d-none">
+                <p class="position-absolute">-Default:오토플레이,</br> 화살표 클릭시 좌우로 스와이프</p>
+            </div>
+            <div class="ex_off position-absolute je_social2 d-none">
+                <p class="position-absolute">-마우스 hover시 밑줄, 클릭시 서브페이지 이동</p>
+            </div>
+        </div>
+
+        <script>
+            const swiperjes = new Swiper('#jeSwiper', {
+            // autoplay: { delay: 2500, },
+            loop: true,
+            pagination: {
+                el: '#jeSwiper .swiper-pagination',
+            },
+            navigation: {
+                nextEl: '#jeSwiper .swiper-button-next',
+                prevEl: '#jeSwiper .swiper-button-prev',
+            },
+            scrollbar: {
+                    el: '#jeSwiper .swiper-scrollbar',
+                },
+            });
+        </script>
+    </section>     
+    <section id="form_tag" class="margin">
+     <div class="container position-relative">
+        <div>
+            <h2 class="pt-5 form_text">너도 아프냐 멍? 나도 아프다 냥!</h2>
+            <div class="mt-1 mb-4 form_text">#집중케어 #펫케어 #펫팸족</div> 
+            
+        </div>
+        <div><img src="/img/img_je/form_tagg.png" alt="" class="form_img"></div>
+
+        <div class="ex_off position-absolute je_form1 d-none">
+            <p class="position-absolute">달력 api 연동</p>
+        </div>
+        <div class="ex_off position-absolute je_form2 d-none">
+            <p class="position-absolute">클릭이벤트, 중복선택 가능</p>
+        </div>
+        <div class="ex_off position-absolute je_form3 d-none">
+            <p class="position-absolute">클릭시 데이터 저장</p>
+        </div>
+        <div class="ex_off position-absolute je_form4 d-none">
+            <p class="position-absolute">마우스 hover시 팝업 나타남 </p>
+        </div>
+        <div class="ex_off position-absolute je_form5 d-none">
+            <p class="position-absolute">선택일자=FullCalendar자바스크립트 사용, 그외 드롭메뉴로 서비스선택 </p>
+        </div>
+        <div class="ex_off position-absolute je_form6 d-none">
+            <p class="position-absolute">주소 api연동 </p>
+        </div>
+        <div class="ex_off position-absolute je_form7 d-none">
+            <p class="position-absolute">사용자가 직접 작성하도록 입력란 제공</p>
+        </div>
+        
+     </div>
+
+
+    </section>    
+    <section id="app_download" class="app_bg1 app_bg2 app_bg3 position-relative">
+       
+        <div class="container d-flex align-items-center justify-content-between" id="jeAppbanner">
+            <div class="align-items-center">
+                <h4 class="d-flex app_come">펫토피아로 와요</h4>
+                <h6 class="app_come_first">첫 회원가입시 2000P 적립</h6>
+            </div>
+            <div><a href="javascript:void(0)" class="app_down d-flex">어플 다운로드</a></div>
+            
+        </div> 
+        <div class="ex_off position-absolute je_app d-none">
+            <p class="position-absolute">서브 페이지 이동</p>
+    </div>
+    </section>
+
+    <!-- aside#quik>i>img+span^ul>li*2>a>i+span^^^div>a>i+span -->
+    <aside id="quik" class="d-flex align-items-center flex-column">
+        <i id="quikBtn">
+            <img src="/img/hj_img/fixed_dog.png" alt="퀵버튼">
+            <span class="visually-hidden">퀵버튼</span>
+        </i>
+        <ul id="quikMenu" class="d-none px-1 pb-2 mb-0">
+            <li class="my-2 qIcon p-2">
+                <a class="text-white" href="javascript:void(0)">
+                    <i class="bi bi-chat"></i>
+                    <span class="visually-hidden">카톡채팅상담</span>
+                </a>
+            </li>
+            <li class="my-2 qIcon p-2">
+                <a class="text-white" href="javascript:void(0)">
+                    <i class="bi bi-instagram"></i>
+                    <span class="visually-hidden">인스타그램</span>
+                </a>
+            </li>
+        </ul>
+        <div class="top_btn">
+            <a href="#">
+                <i class="bi bi-arrow-up"></i>
+                <span class="visually-hidden">위로가기</span>
+            </a>
+        </div>
+        <script>
+            const quikBtn = document.getElementById("quikBtn");
+            const quikMenu = document.getElementById("quikMenu");      
+                let status = true;
+                quikBtn.addEventListener("click", function(){
+                    if(status){
+                        quikMenu.classList.remove("d-none");
+                        status = false;
+                    } else {
+                        quikMenu.classList.add("d-none");
+                        status = true;
+                    }
+                });
+            
+        </script>        
+    </aside>
+    <div id="aside_ex"  class="hd_quik d-none position-fixed">
+        <div class="ex_con emmet">
+            <p>aside#quik>i>img+span^ul>li*2>a>i+span^^^div>a>i+span</p>
+        </div>
+        <div class="ex_con aside_ex1">
+            <p>토글 되는 퀵 버튼</p>
+        </div>
+        <div class="ex_con aside_ex2 my-0">
+            <p>챗상담, 인스타바로가기</p>
+        </div>
+        <div class="ex_con aside_ex3">
+            <p>상위로이동 하는 탑버튼</p>
+        </div>
+    </div>
+    
+    <!-- footer#ft>div.container>div>ul>li*4>a^^div+p+ul>li*3>a>i+span^^^^div>h1>a>img -->
+    <footer id="ft" class="py-5">
+        <div class="container d-flex justify-content-between px-0">
+            <div class="ft_right">
+                <ul class="d-flex mb-3 ft_menu ps-0">
+                    <li class="pe-2 ft_menu_li"><a href="">고객센터</a></li>
+                    <li class="px-2 ft_menu_li"><a href="">개인정보처리방침</a></li>
+                    <li class="px-2 ft_menu_li"><a href="">이용약관</a></li>
+                    <li class="ps-2 ft_menu_li border-0"><a href="">공지사항</a></li>
+                </ul>
+                <div class="ft_info mb-3">
+                    <div class="d-flex">
+                        <p class="mb-0">(주) 펫피플 사업자 등록번호 : 347-87-00837</p>
+                        <p class="mb-0">통신판매업 신고번호 : 제 2017-서울강남-03319</p>
+                    </div>
+                    <p class="mb-0">대표 : 이원복 | 개인정보책임자 : 김태호</p>
+                    <p class="mb-0">주소 : 서울 강남구 삼성동 118-11, 2층 (주식회사 펫피플)</p>
+                    <p class="mb-0">문의 : hello@wayopet.com / 070-4756-2224</p>
+                </div>
+                <p class="ft_copy mb-3">© 2020 Pet People Inc.</p>
+                <ul class="d-flex ft-icon ps-0">
+                    <li class="me-2" ><a class="icon-position" href="javascript:void(0)"><i class="bi bi-chat"></i><span class="visually-hidden">카카오톡</span></a></li>
+                    <li class="me-2"><a href=""><i class="bi bi-youtube"></i><span class="visually-hidden">유튜브</span></a></li>
+                    <li><a href=""><i class="bi bi-instagram"></i><span class="visually-hidden">인스타그램</span></a></li>
+                </ul>
+            </div>
+            <div class="ft_left d-flex align-items-end">
+                <h1><a href="javascript:void(0)"><img src="/img/logo-04.svg" alt=""></a></h1>
+            </div>
+            <div id="ft_ex" class="ex_off container px-0 d-none position-absolute">
+                <div class="ex_con ft_ex_right d-flex ">
+                    <div class="ex_con ex_con_ft1">
+                        <p>하단 메뉴 클릭시 서브페이지 이동</p>
+                        <p class="emmet">footer#ft>div.container>div>ul>li*4>a^^div+p+ul>li*3>a>i+span^^^^div>h1>a>img</p>                        
+                    </div>
+                    <div class="ex_con ex_con_ft2">
+                        <p>각 sns 페이지로 이동</p>                        
+                    </div>
+                </div>     
+                 
+            </div>
+        </div>        
+    </footer>
+    
+    <div id="ex_bg" class="d-none all_bg">
+        <button id="ex_btn" class="all_btn">                
+        </button>
+    </div>
+    <div id="info_bg" class="d-none all_bg">
+        <button id="info_btn" class="all_btn">                
+        </button>
+    </div>
+    <script>
+        //컨텐츠 배경과 닫기 버튼
+        const exBtn = document.getElementById('ex_btn');
+        const exBg = document.getElementById('ex_bg');  
+        //팀소개 배경과 닫기 버튼
+        const infoBtn = document.getElementById('info_btn'); 
+        const infoBg = document.getElementById('info_bg');     
+        //모든 컨텐츠
+        const exOff = document.querySelectorAll('.ex_off');
+        //헤터, 퀵 컨텐츠
+        const exHQOff = document.querySelectorAll('.hd_quik');
+        //팀소개 컨텐츠
+        const tInfo = document.getElementById('team_info');
+        //컨텐츠 버튼
+        const hdH1 = document.getElementById('hd_h1');
+        //헤더, 퀵 버튼
+        const exHQBtn = document.getElementById('hd_log');
+        //팀소개 버튼
+        const teamBtn = document.getElementById('info_click');
+        
+
+
+        //팀소개 버튼 클릭시 팀소개랑 배경나옴
+        teamBtn.addEventListener('click', function(event){
+            event.preventDefault();
+
+            infoBg.classList.add('d-block');
+            infoBg.classList.remove('d-none');
+            tInfo.classList.add('d-block');
+            tInfo.classList.remove('d-none');
+        });
+
+        //닫기버튼 클릭시 팀소개 닫힘
+        infoBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            infoBg.classList.add('d-none');
+            infoBg.classList.remove('d-block');
+            tInfo.classList.add('d-none');
+            tInfo.classList.remove('d-block');
+            
+        });
+
+        //로고클릭시 컨텐츠랑 배경나옴
+        hdH1.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            exBg.classList.add('d-block');
+            exBg.classList.remove('d-none');
+            exOff.forEach(function(element) {
+                element.classList.add('d-block');
+                element.classList.remove('d-none');
+            });
+                    
+        });
+
+        //헤더 퀵 부분 컨텐츠나옴
+        exHQBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            exBg.classList.add('d-block');
+            exBg.classList.remove('d-none');
+            exHQOff.forEach(function(element) {
+                element.classList.add('d-flex');
+                element.classList.remove('d-none');
+            });
+            
+        });
+
+        //닫기버튼 클릭시 다 닫힘
+        exBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            exBg.classList.add('d-none');
+            exBg.classList.remove('d-block');
+            exOff.forEach(function(element) {
+                element.classList.add('d-none');
+                element.classList.remove('d-flex');
+            });
+            exHQOff.forEach(function(element) {
+                element.classList.add('d-none');
+                element.classList.remove('d-flex');
+            });
+            
+        });
+
+        
+
+    </script>
+</body>
+</html>
